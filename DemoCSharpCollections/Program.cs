@@ -6,7 +6,7 @@ namespace DemoCSharpCollections
     {
         static void Main(string[] args)
         {
-            var reader = new CsvReader(@"C:\Users\Sophart\Desktop\Dev\pluralsight\BeginningCSharpCollections\Pop by Largest Final.csv");
+            var reader = new CsvReader(@"../BeginningCSharpCollections/Pop by Largest Final.csv");
             
             var countries = reader.ReadAllCountriesFromCsv();
 
