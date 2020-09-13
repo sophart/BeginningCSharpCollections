@@ -9,5 +9,9 @@ namespace DemoCSharpCollections
             _filePath = filePath;
         }
 
+        public Country[] ReadNCountriesFromCsv(int nCountries)
+        {
+            return null;
+        }
     }
 }
