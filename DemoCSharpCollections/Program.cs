@@ -12,7 +12,7 @@ namespace DemoCSharpCollections
 
             foreach (var country in countries)
             {
-                System.Console.WriteLine($"{country.Population} : {country.Name}");
+                System.Console.WriteLine($"{PopulationFormatter.FormatPopulation(country.Population).PadLeft(15)} : {country.Name}");
             }
         }
     }
