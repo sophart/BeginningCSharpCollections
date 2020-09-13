@@ -8,7 +8,7 @@ namespace DemoCSharpCollections
         {
             var reader = new CsvReader(@"C:\Users\Sophart\Desktop\Dev\pluralsight\BeginningCSharpCollections\Pop by Largest Final.csv");
             
-            var countries = reader.ReadNCountriesFromCsv(10);
+            var countries = reader.ReadAllCountriesFromCsv();
 
             foreach (var country in countries)
             {
