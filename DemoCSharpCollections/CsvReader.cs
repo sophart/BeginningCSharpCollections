@@ -29,7 +29,7 @@ namespace DemoCSharpCollections
             return countries;
         }
 
-        public Country ReadCountryFromCsvLine(string csvLine)
+        private Country ReadCountryFromCsvLine(string csvLine)
         {
             string[] parts = csvLine.Split(',');
             var name = parts[0];
