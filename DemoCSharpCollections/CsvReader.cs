@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 
 namespace DemoCSharpCollections
@@ -11,19 +12,19 @@ namespace DemoCSharpCollections
             _filePath = filePath;
         }
 
-        public Country[] ReadNCountriesFromCsv(int nCountries)
+        public List<Country> ReadAllCountriesFromCsv()
         {
-            var countries = new Country[nCountries];
+            var countries = new List<Country>();
 
             using (var sr = new StreamReader(_filePath))
             {
                 //Read Header Line
                 sr.ReadLine();
 
-                for (int i = 0; i < nCountries; i++)
+                while(sr.ReadLine() != null)
                 {
                     var country  = ReadCountryFromCsvLine(sr.ReadLine());
-                    countries[i] = country;
+                    countries.Add(country);
                 }
             }
             return countries;
