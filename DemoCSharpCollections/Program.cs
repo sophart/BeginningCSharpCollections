@@ -6,7 +6,14 @@ namespace DemoCSharpCollections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var reader = new CsvReader(@"C:\Users\Sophart\Desktop\Dev\pluralsight\BeginningCSharpCollections\Pop by Largest Final.csv");
+            
+            var countries = reader.ReadNCountriesFromCsv(10);
+
+            foreach (var country in countries)
+            {
+                System.Console.WriteLine($"{country.Population} : {country.Name}");
+            }
         }
     }
 }
