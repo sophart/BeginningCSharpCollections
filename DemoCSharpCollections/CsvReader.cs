@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace DemoCSharpCollections
 {
     class CsvReader
@@ -11,7 +13,20 @@ namespace DemoCSharpCollections
 
         public Country[] ReadNCountriesFromCsv(int nCountries)
         {
-            return null;
+            var countries = new Country[nCountries];
+
+            using (var sr = new StreamReader(_filePath))
+            {
+                //Read Header Line
+                sr.ReadLine();
+
+                for (int i = 0; i < nCountries; i++)
+                {
+                    var country  = ReadCountryFromCsvLine(sr.ReadLine());
+                    countries[i] = country;
+                }
+            }
+            return countries;
         }
 
         public Country ReadCountryFromCsvLine(string csvLine)
